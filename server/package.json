@@ -1,0 +1,13 @@
+{
+  "name": "compound-automation-server",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "node server.js",
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "compound-automation-site": "file:..",
+    "express": "^4.21.2"
+  }
+}
