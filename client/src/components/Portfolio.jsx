@@ -11,7 +11,7 @@ function Portfolio() {
     <section className="content-section portfolio-section section-primary" id="portfolio">
       <div className="page-container">
         <ScrollReveal>
-          <p className="section-label">PORTFOLIO</p>
+          <p className="section-label">EXAMPLES</p>
         </ScrollReveal>
         <ScrollReveal delayMs={120}>
           <h2 className="section-heading">Built for CRE.</h2>

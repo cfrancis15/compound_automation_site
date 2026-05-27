@@ -16,8 +16,8 @@ function CallToAction() {
         </ScrollReveal>
         <ScrollReveal delayMs={120}>
           <p className="section-body contact-subheading">
-            Book a free discovery call. We&apos;ll walk through your workflow and
-            show you what&apos;s possible.
+            30 minutes. We walk through your workflow and tell you exactly what we
+            can build.
           </p>
         </ScrollReveal>
 

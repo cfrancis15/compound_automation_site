@@ -22,9 +22,8 @@ function HowItWorks() {
               <p className="step-number">01</p>
               <h3 className="step-heading">Discovery Call</h3>
               <p className="step-body">
-                We learn your workflow, your data sources, and where your team is
-                losing hours. You walk away knowing exactly what&apos;s possible
-                and what it costs.
+                Tell us what your team does on every deal. We will tell you what we
+                can automate and what it costs. No commitment.
               </p>
               <p className="step-price">Free</p>
               <p className="step-note">30 minutes, no commitment</p>
@@ -34,11 +33,11 @@ function HowItWorks() {
               <p className="step-number">02</p>
               <h3 className="step-heading">Build &amp; Deploy</h3>
               <p className="step-body">
-                We build your automation, integrate it with your existing tools,
-                and deploy it. Your team is trained and running within weeks.
+                We build your automation, plug it into your existing tools, and
+                train your team. You are up and running within weeks.
               </p>
-              <p className="step-price">Timeline varies</p>
-              <p className="step-note">Based on project scope</p>
+              <p className="step-price">2-6 weeks</p>
+              <p className="step-note">Depending on scope</p>
             </article>
           </div>
         </ScrollReveal>

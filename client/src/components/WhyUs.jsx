@@ -14,11 +14,7 @@ function WhyUs() {
         </ScrollReveal>
         <ScrollReveal delayMs={240}>
           <p className="section-body why-us-body">
-            I spent time as an analyst at a national CRE brokerage. I&apos;ve pulled
-            the comps, built the models, formatted the memos. I built automation
-            tools on the job because I got tired of doing it by hand. Compound
-            Automation exists because I know exactly where your workflow breaks,
-            and I know how to fix it.
+          I worked as an analyst at a national CRE brokerage. Pulled comps, built models, formatted memos. Same work, every deal. I got tired of doing it by hand, so I started writing code to do it for me. Compound Automation exists because I've sat in your analyst's chair and I know exactly where the workflow breaks.
           </p>
         </ScrollReveal>
 

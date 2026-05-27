@@ -65,8 +65,7 @@ function Hero() {
             </ScrollReveal>
             <ScrollReveal delayMs={120}>
               <p className="hero-subheading">
-                Compound Automation builds data pipelines and deal memo systems for
-                CRE brokerages. Your analysts focus on deals. We handle the data.
+                We build automation tools for CRE brokerages & buyside firms. Your analysts focus on deals, we automate everything else.
               </p>
             </ScrollReveal>
             <ScrollReveal delayMs={240}>
@@ -96,7 +95,7 @@ function Hero() {
             </div>
             <div className="metadata-item">
               <p className="metadata-label">Engagements From</p>
-              <p className="metadata-value price-mono">$7,000</p>
+              <p className="metadata-value price-mono">$2,000</p>
             </div>
           </div>
         </ScrollReveal>

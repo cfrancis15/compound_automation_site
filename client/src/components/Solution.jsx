@@ -10,7 +10,7 @@ function Solution() {
           <p className="section-label">WHAT WE BUILD</p>
         </ScrollReveal>
         <ScrollReveal delayMs={120}>
-          <h2 className="section-heading">Three ways in.</h2>
+          <h2 className="section-heading">Three ways forward.</h2>
         </ScrollReveal>
 
         <ScrollReveal delayMs={240}>
@@ -19,8 +19,8 @@ function Solution() {
               <p className="card-phase-label">ENTRY POINT</p>
               <h3 className="card-heading">Comps Automator</h3>
               <p className="card-body">
-                A standalone tool that pulls your comparable sales data from your
-                sources, structures it, and outputs formatted comp reports. One
+                A standalone tool that pulls your comparable sales/rent data from your
+                sources, structures it, and outputs formatted comps. One
                 workflow, one pain point, delivered fast.
               </p>
               <div className="solution-tier-price">
@@ -33,7 +33,7 @@ function Solution() {
               <p className="card-phase-label">CORE PACKAGE</p>
               <h3 className="card-heading">Underwriting Automation</h3>
               <p className="card-body">
-                The full pipeline. We structure your messy data inputs,
+              The full pipeline. We structure your messy data inputs,
                 auto-populate your underwriting model, and generate branded deal
                 memos on the back end. Your analysts evaluate deals instead of
                 entering data.
@@ -45,7 +45,7 @@ function Solution() {
             </article>
 
             <article className="solution-phase">
-              <p className="card-phase-label">CUSTOM</p>
+              <p className="card-phase-label">CUSTOM BUILD</p>
               <h3 className="card-heading">Workflow Engineering</h3>
               <p className="card-body">
                 Bespoke automation for the rest of your operation. Pipeline
