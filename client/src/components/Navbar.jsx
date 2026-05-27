@@ -54,7 +54,14 @@ function Navbar() {
             window.scrollTo({ top: 0, behavior: "smooth" });
           }}
         >
-          Compound Automation
+          <img
+            className="navbar-logo-mark"
+            src="/logo.png"
+            alt=""
+            width="32"
+            height="32"
+          />
+          <span className="navbar-logo-text">Compound Automation</span>
         </a>
 
         <button

@@ -156,12 +156,26 @@ img {
 }
 
 .navbar-logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
   font-family: "Space Grotesk", sans-serif;
   font-size: 22px;
   color: #e6e6e6;
   white-space: nowrap;
   text-transform: uppercase;
   letter-spacing: 0.08em;
+}
+
+.navbar-logo-mark {
+  display: block;
+  width: 32px;
+  height: 32px;
+  flex-shrink: 0;
+}
+
+.navbar-logo-text {
+  line-height: 1;
 }
 
 .navbar-nav {
@@ -323,7 +337,7 @@ img {
 
 .solution-phases {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   margin-top: 48px;
   border: 1px solid rgba(255, 255, 255, 0.08);
 }
@@ -334,15 +348,30 @@ img {
   flex-direction: column;
 }
 
-.solution-phase:first-child {
+.solution-phase:not(:last-child) {
   border-right: 1px solid rgba(255, 255, 255, 0.08);
 }
 
-.solution-phase-footnote {
-  margin: 32px 0 0;
+.solution-phase .card-body {
+  flex: 1;
+}
+
+.solution-tier-price {
+  margin-top: auto;
   padding-top: 24px;
-  font-size: 14px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.solution-tier-price-value {
+  margin: 0 0 8px;
+  font-size: 32px;
   color: #4d9bf7;
+}
+
+.solution-tier-price-note {
+  margin: 0;
+  font-size: 14px;
+  color: #888888;
 }
 
 /* Portfolio cards */
@@ -358,7 +387,7 @@ img {
   height: 100%;
 }
 
-.steps-row .scroll-reveal {
+.process-steps .scroll-reveal {
   height: 100%;
 }
 
@@ -435,15 +464,19 @@ img {
 
 /* How It Works */
 
-.steps-row {
+.process-steps {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 40px;
+  grid-template-columns: repeat(2, 1fr);
   margin-top: 48px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
 }
 
-.step-card {
-  padding: 8px 0;
+.process-step {
+  padding: 40px;
+}
+
+.process-step:not(:last-child) {
+  border-right: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .step-number {
@@ -467,6 +500,12 @@ img {
   font-size: 16px;
   color: #b0b0b0;
   line-height: 1.6;
+}
+
+.step-note {
+  margin: 8px 0 0;
+  font-size: 14px;
+  color: #888888;
 }
 
 .step-price {
@@ -672,16 +711,20 @@ img {
     margin-top: 8px;
   }
 
-  .steps-row {
+  .process-steps {
     grid-template-columns: 1fr;
-    gap: 48px;
+  }
+
+  .process-step:not(:last-child) {
+    border-right: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
   }
 
   .solution-phases {
     grid-template-columns: 1fr;
   }
 
-  .solution-phase:first-child {
+  .solution-phase:not(:last-child) {
     border-right: none;
     border-bottom: 1px solid rgba(255, 255, 255, 0.08);
   }
@@ -756,8 +799,13 @@ img {
     text-align: center;
   }
 
-  .solution-phase {
+  .solution-phase,
+  .process-step {
     padding: 24px;
+  }
+
+  .solution-tier-price-value {
+    font-size: 28px;
   }
 
   .portfolio-card-content {

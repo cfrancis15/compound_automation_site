@@ -1,4 +1,4 @@
-// HowItWorks - three-step process with pricing
+// HowItWorks - two-step process with shared bordered layout
 
 import ScrollReveal from "./ScrollReveal.jsx";
 
@@ -13,49 +13,39 @@ function HowItWorks() {
           <p className="section-label">HOW IT WORKS</p>
         </ScrollReveal>
         <ScrollReveal delayMs={120}>
-          <h2 className="section-heading">Three steps to automation.</h2>
+          <h2 className="section-heading">How it starts.</h2>
         </ScrollReveal>
 
-        <div className="steps-row">
-          <ScrollReveal delayMs={240}>
-            <article className="step-card">
+        <ScrollReveal delayMs={240}>
+          <div className="process-steps">
+            <article className="process-step">
               <p className="step-number">01</p>
               <h3 className="step-heading">Discovery Call</h3>
               <p className="step-body">
-                We learn your workflow, your data sources, and your pain points.
+                We learn your workflow, your data sources, and where your team is
+                losing hours. You walk away knowing exactly what&apos;s possible
+                and what it costs.
               </p>
               <p className="step-price">Free</p>
+              <p className="step-note">30 minutes, no commitment</p>
             </article>
-          </ScrollReveal>
 
-          <ScrollReveal delayMs={360}>
-            <article className="step-card">
+            <article className="process-step">
               <p className="step-number">02</p>
-              <h3 className="step-heading">Discovery Audit</h3>
-              <p className="step-body">
-                We map your entire underwriting process, inventory your data, and
-                scope the automation build. You get a written proposal.
-              </p>
-              <p className="step-price price-mono">$499</p>
-            </article>
-          </ScrollReveal>
-
-          <ScrollReveal delayMs={480}>
-            <article className="step-card">
-              <p className="step-number">03</p>
               <h3 className="step-heading">Build &amp; Deploy</h3>
               <p className="step-body">
                 We build your automation, integrate it with your existing tools,
                 and deploy it. Your team is trained and running within weeks.
               </p>
-              <p className="step-price price-mono">$7,000</p>
+              <p className="step-price">Timeline varies</p>
+              <p className="step-note">Based on project scope</p>
             </article>
-          </ScrollReveal>
-        </div>
+          </div>
+        </ScrollReveal>
 
-        <ScrollReveal delayMs={600}>
+        <ScrollReveal delayMs={360}>
           <p className="how-it-works-note">
-            Ongoing hosting and support:{" "}
+            Ongoing pipeline maintenance and support:{" "}
             <span className="price-mono">$300/month</span>. Feature additions:{" "}
             <span className="price-mono">$50/hour</span>.
           </p>
