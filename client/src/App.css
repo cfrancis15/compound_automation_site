@@ -466,7 +466,7 @@ img {
 
 .process-steps {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   margin-top: 48px;
   border: 1px solid rgba(255, 255, 255, 0.08);
 }

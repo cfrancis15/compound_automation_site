@@ -1,4 +1,4 @@
-// HowItWorks - two-step process with shared bordered layout
+// HowItWorks - three-step process with shared bordered layout
 
 import ScrollReveal from "./ScrollReveal.jsx";
 
@@ -39,15 +39,19 @@ function HowItWorks() {
               <p className="step-price">2-6 weeks</p>
               <p className="step-note">Depending on scope</p>
             </article>
-          </div>
-        </ScrollReveal>
 
-        <ScrollReveal delayMs={360}>
-          <p className="how-it-works-note">
-            Ongoing pipeline maintenance and support:{" "}
-            <span className="price-mono">$300/month</span>. Feature additions:{" "}
-            <span className="price-mono">$50/hour</span>.
-          </p>
+            <article className="process-step">
+              <p className="step-number">03</p>
+              <h3 className="step-heading">Maintain &amp; Iterate</h3>
+              <p className="step-body">
+                Your automation stays running and keeps getting better. We handle
+                hosting, bug fixes, and data source updates. When you need new
+                features or workflows, we build those too.
+              </p>
+              <p className="step-price price-mono">$300/month</p>
+              <p className="step-note">Feature additions: $50/hr</p>
+            </article>
+          </div>
         </ScrollReveal>
       </div>
     </section>
