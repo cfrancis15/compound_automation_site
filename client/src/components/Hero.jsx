@@ -65,7 +65,7 @@ function Hero() {
             </ScrollReveal>
             <ScrollReveal delayMs={120}>
               <p className="hero-subheading">
-                We build automation tools for CRE brokerages & buyside firms. Your analysts focus on deals, we automate everything else.
+              We build automation tools for CRE brokerages and buyside firms so your analysts can focus on deals instead of data entry.
               </p>
             </ScrollReveal>
             <ScrollReveal delayMs={240}>
