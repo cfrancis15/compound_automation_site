@@ -57,7 +57,7 @@ function Navbar() {
           <img
             className="navbar-logo-mark"
             src="/logo.png"
-            alt=""
+            alt="Compound Automation"
             width="32"
             height="32"
           />

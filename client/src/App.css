@@ -669,8 +669,28 @@ img {
     font-size: 48px;
   }
 
+  .navbar-inner {
+    position: relative;
+    gap: 12px;
+  }
+
+  .navbar-logo {
+    min-width: 0;
+    flex: 1;
+    font-size: 20px;
+  }
+
+  .navbar-logo-text {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    min-width: 0;
+  }
+
   .navbar-toggle {
     display: flex;
+    flex-shrink: 0;
+    position: relative;
+    z-index: 2;
   }
 
   .navbar-nav {
@@ -757,6 +777,16 @@ img {
     padding-right: 20px;
   }
 
+  .navbar-logo {
+    font-size: 18px;
+    gap: 10px;
+  }
+
+  .navbar-logo-mark {
+    width: 28px;
+    height: 28px;
+  }
+
   .section-heading {
     font-size: 32px;
   }
@@ -819,6 +849,18 @@ img {
   .step-price {
     font-size: 28px;
     white-space: nowrap;
+  }
+}
+
+/* Small mobile: 575px and below */
+
+@media (max-width: 575px) {
+  .navbar-logo-text {
+    display: none;
+  }
+
+  .navbar-logo {
+    flex: 0 1 auto;
   }
 }
 
