@@ -49,7 +49,7 @@ function HowItWorks() {
                 features or workflows, we build those too.
               </p>
               <p className="step-price price-mono">$300/month</p>
-              <p className="step-note">Feature additions: $50/hr</p>
+              <p className="step-note">Retainer optional | Feature additions: $50/hr</p>
             </article>
           </div>
         </ScrollReveal>
