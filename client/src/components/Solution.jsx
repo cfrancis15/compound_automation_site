@@ -17,11 +17,9 @@ function Solution() {
           <div className="solution-phases">
             <article className="solution-phase">
               <p className="card-phase-label">ENTRY POINT</p>
-              <h3 className="card-heading">Comps Automator</h3>
+              <h3 className="card-heading">Deal Screener</h3>
               <p className="card-body">
-                A standalone tool that pulls your comparable sales/rent data from your
-                sources, structures it, and outputs formatted comps. One
-                workflow, one pain point, delivered fast.
+              Automated deal scoring against auto-fetched comps. Green/yellow/red at a glance.
               </p>
               <div className="solution-tier-price">
                 <p className="solution-tier-price-value price-mono">$2,000</p>
