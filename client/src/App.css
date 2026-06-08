@@ -131,7 +131,7 @@ img {
 
 /* Navbar */
 
-.navbar {
+.site-navbar {
   position: fixed;
   top: 0;
   left: 0;
@@ -142,12 +142,12 @@ img {
   transition: background-color 0.3s ease, border-color 0.3s ease;
 }
 
-.navbar-scrolled {
+.site-navbar-scrolled {
   background-color: rgba(13, 17, 23, 0.95);
   border-bottom-color: rgba(255, 255, 255, 0.06);
 }
 
-.navbar-inner {
+.site-navbar-inner {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -155,7 +155,7 @@ img {
   gap: 24px;
 }
 
-.navbar-logo {
+.site-navbar-logo {
   display: flex;
   align-items: center;
   gap: 12px;
@@ -167,39 +167,37 @@ img {
   letter-spacing: 0.08em;
 }
 
-.navbar-logo-mark {
+.site-navbar-logo-mark {
   display: block;
   width: 32px;
   height: 32px;
   flex-shrink: 0;
 }
 
-.navbar-logo-text {
+.site-navbar-logo-text {
   line-height: 1;
 }
 
-.navbar-nav {
+.site-navbar-nav {
   display: flex;
   align-items: center;
   gap: 28px;
 }
 
-.navbar-link {
+.site-navbar-link {
   font-family: "DM Sans", sans-serif;
   font-size: 15px;
   color: #b0b0b0;
   transition: color 0.2s ease;
 }
 
-.navbar-link:hover {
+.site-navbar-link:hover {
   color: #e6e6e6;
 }
 
-.navbar-cta-button {
+.site-navbar-demo-button,
+.site-navbar-cta-button {
   padding: 10px 20px;
-  background-color: transparent;
-  color: #4d9bf7;
-  border: 1px solid rgba(77, 155, 247, 0.3);
   font-family: "DM Sans", sans-serif;
   font-weight: 600;
   font-size: 14px;
@@ -207,13 +205,30 @@ img {
     transform 0.3s ease;
 }
 
-.navbar-cta-button:hover {
+.site-navbar-demo-button {
+  background-color: #4d9bf7;
+  color: #0a0a0a;
+  border: 1px solid #4d9bf7;
+}
+
+.site-navbar-demo-button:hover {
+  background-color: transparent;
+  color: #4d9bf7;
+}
+
+.site-navbar-cta-button {
+  background-color: transparent;
+  color: #4d9bf7;
+  border: 1px solid rgba(77, 155, 247, 0.3);
+}
+
+.site-navbar-cta-button:hover {
   background-color: #4d9bf7;
   color: #0a0a0a;
   border-color: #4d9bf7;
 }
 
-.navbar-toggle {
+.site-navbar-toggle {
   display: none;
   flex-direction: column;
   justify-content: center;
@@ -226,7 +241,7 @@ img {
   cursor: pointer;
 }
 
-.navbar-toggle-bar {
+.site-navbar-toggle-bar {
   display: block;
   width: 18px;
   height: 2px;
@@ -354,6 +369,20 @@ img {
 
 .solution-phase .card-body {
   flex: 1;
+}
+
+.solution-demo-link {
+  display: inline-block;
+  margin-top: 16px;
+  font-family: "DM Sans", sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  color: #4d9bf7;
+  transition: color 0.2s ease;
+}
+
+.solution-demo-link:hover {
+  color: #7ab4fa;
 }
 
 .solution-tier-price {
@@ -669,31 +698,31 @@ img {
     font-size: 48px;
   }
 
-  .navbar-inner {
+  .site-navbar-inner {
     position: relative;
     gap: 12px;
   }
 
-  .navbar-logo {
+  .site-navbar-logo {
     min-width: 0;
     flex: 1;
     font-size: 20px;
   }
 
-  .navbar-logo-text {
+  .site-navbar-logo-text {
     overflow: hidden;
     text-overflow: ellipsis;
     min-width: 0;
   }
 
-  .navbar-toggle {
+  .site-navbar-toggle {
     display: flex;
     flex-shrink: 0;
     position: relative;
     z-index: 2;
   }
 
-  .navbar-nav {
+  .site-navbar-nav {
     position: absolute;
     top: 72px;
     left: 0;
@@ -711,7 +740,7 @@ img {
     transition: max-height 0.3s ease, opacity 0.3s ease, padding 0.3s ease;
   }
 
-  .navbar-nav-open {
+  .site-navbar-nav-open {
     max-height: 420px;
     opacity: 1;
     pointer-events: auto;
@@ -719,13 +748,15 @@ img {
     padding-bottom: 24px;
   }
 
-  .navbar-link,
-  .navbar-cta-button {
+  .site-navbar-link,
+  .site-navbar-demo-button,
+  .site-navbar-cta-button {
     padding: 12px 0;
     text-align: left;
   }
 
-  .navbar-cta-button {
+  .site-navbar-demo-button,
+  .site-navbar-cta-button {
     display: inline-block;
     width: fit-content;
     margin-top: 8px;
@@ -777,12 +808,12 @@ img {
     padding-right: 20px;
   }
 
-  .navbar-logo {
+  .site-navbar-logo {
     font-size: 18px;
     gap: 10px;
   }
 
-  .navbar-logo-mark {
+  .site-navbar-logo-mark {
     width: 28px;
     height: 28px;
   }
@@ -855,11 +886,11 @@ img {
 /* Small mobile: 575px and below */
 
 @media (max-width: 575px) {
-  .navbar-logo-text {
+  .site-navbar-logo-text {
     display: none;
   }
 
-  .navbar-logo {
+  .site-navbar-logo {
     flex: 0 1 auto;
   }
 }

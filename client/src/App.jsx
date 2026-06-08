@@ -10,6 +10,10 @@ import HowItWorks from "./components/HowItWorks.jsx";
 import Portfolio from "./components/Portfolio.jsx";
 import CallToAction from "./components/CallToAction.jsx";
 import Footer from "./components/Footer.jsx";
+import DemoLayout from "./demo/DemoLayout.jsx";
+import Dashboard from "./demo/pages/Dashboard.jsx";
+import DealDetail from "./demo/pages/DealDetail.jsx";
+import Screens from "./demo/pages/Screens.jsx";
 
 function HomePage() {
   return (
@@ -31,11 +35,14 @@ function HomePage() {
 
 function App() {
   return (
-    <div className="app">
-      <Routes>
-        <Route path="/" element={<HomePage />} />
-      </Routes>
-    </div>
+    <Routes>
+      <Route path="/" element={<HomePage />} />
+      <Route path="/demo" element={<DemoLayout />}>
+        <Route index element={<Dashboard />} />
+        <Route path="deals/:id" element={<DealDetail />} />
+        <Route path="screens" element={<Screens />} />
+      </Route>
+    </Routes>
   );
 }
 

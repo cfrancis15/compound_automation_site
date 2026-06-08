@@ -1,0 +1,146 @@
+/* Mobile-first: stacked filters */
+
+.filter-bar {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+  padding: 0.85rem 1rem;
+  background: #111827;
+  border: 1px solid #1e293b;
+  border-radius: 8px;
+}
+
+.filter-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  width: 100%;
+}
+
+.filter-group.screen-group,
+.filter-group.sort-group {
+  min-width: 0;
+  margin-left: 0;
+}
+
+.filter-label {
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: #64748b;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.filter-select,
+.filter-input {
+  width: 100%;
+  min-height: 44px;
+  padding: 0.55rem 0.65rem;
+  font-size: 0.9rem;
+  color: #e2e8f0;
+  background: #0d1117;
+  border: 1px solid #334155;
+  border-radius: 6px;
+  outline: none;
+  transition: border-color 0.15s;
+}
+
+.filter-select:focus,
+.filter-input:focus {
+  border-color: #22c55e;
+}
+
+.score-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+}
+
+.score-btn {
+  min-height: 44px;
+  min-width: 44px;
+  padding: 0.5rem 0.85rem;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: #94a3b8;
+  background: #0d1117;
+  border: 1px solid #334155;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: color 0.15s, background 0.15s, border-color 0.15s;
+}
+
+.score-btn:hover {
+  color: #e2e8f0;
+  border-color: #475569;
+}
+
+.score-btn.active {
+  color: #f1f5f9;
+}
+
+.score-btn.active.all {
+  background: rgba(148, 163, 184, 0.15);
+  border-color: #64748b;
+}
+
+.score-btn.active.green {
+  background: rgba(34, 197, 94, 0.15);
+  border-color: #22c55e;
+  color: #22c55e;
+}
+
+.score-btn.active.yellow {
+  background: rgba(234, 179, 8, 0.15);
+  border-color: #eab308;
+  color: #eab308;
+}
+
+.score-btn.active.red {
+  background: rgba(239, 68, 68, 0.15);
+  border-color: #ef4444;
+  color: #ef4444;
+}
+
+/* Tablet: horizontal filter bar */
+@media (min-width: 768px) {
+  .filter-bar {
+    flex-direction: row;
+    align-items: flex-end;
+    flex-wrap: wrap;
+    gap: 1.25rem;
+    padding: 0.85rem 1.25rem;
+  }
+
+  .filter-group {
+    width: auto;
+  }
+
+  .filter-group.screen-group {
+    min-width: 220px;
+  }
+
+  .filter-group.sort-group {
+    margin-left: auto;
+    min-width: 180px;
+  }
+
+  .filter-select,
+  .filter-input {
+    width: auto;
+    min-height: auto;
+    padding: 0.45rem 0.65rem;
+    font-size: 0.85rem;
+  }
+
+  .filter-input {
+    width: 110px;
+  }
+
+  .score-btn {
+    min-height: auto;
+    min-width: auto;
+    padding: 0.4rem 0.75rem;
+    font-size: 0.8rem;
+  }
+}

@@ -1,6 +1,7 @@
 // Navbar - fixed top navigation with anchor links and mobile menu
 
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import { CAL_LINK } from "../config.js";
 
 function Navbar() {
@@ -33,55 +34,55 @@ function Navbar() {
     setMenuOpen(false);
   }
 
-  let navbarClassName = "navbar";
+  let navbarClassName = "site-navbar";
   if (scrolled) {
-    navbarClassName = navbarClassName + " navbar-scrolled";
+    navbarClassName = navbarClassName + " site-navbar-scrolled";
   }
 
-  let navClassName = "navbar-nav";
+  let navClassName = "site-navbar-nav";
   if (menuOpen) {
-    navClassName = navClassName + " navbar-nav-open";
+    navClassName = navClassName + " site-navbar-nav-open";
   }
 
   return (
     <header className={navbarClassName}>
-      <div className="navbar-inner page-container">
+      <div className="site-navbar-inner page-container">
         <a
           href="#"
-          className="navbar-logo"
+          className="site-navbar-logo"
           onClick={function goTop(event) {
             event.preventDefault();
             window.scrollTo({ top: 0, behavior: "smooth" });
           }}
         >
           <img
-            className="navbar-logo-mark"
+            className="site-navbar-logo-mark"
             src="/logo.png"
             alt="Compound Automation"
             width="32"
             height="32"
           />
-          <span className="navbar-logo-text">Compound Automation</span>
+          <span className="site-navbar-logo-text">Compound Automation</span>
         </a>
 
         <button
           type="button"
-          className="navbar-toggle"
+          className="site-navbar-toggle"
           aria-label="Toggle navigation menu"
           aria-expanded={menuOpen}
           onClick={function toggleMenu() {
             setMenuOpen(!menuOpen);
           }}
         >
-          <span className="navbar-toggle-bar" />
-          <span className="navbar-toggle-bar" />
-          <span className="navbar-toggle-bar" />
+          <span className="site-navbar-toggle-bar" />
+          <span className="site-navbar-toggle-bar" />
+          <span className="site-navbar-toggle-bar" />
         </button>
 
         <nav className={navClassName}>
           <a
             href="#problem"
-            className="navbar-link"
+            className="site-navbar-link"
             onClick={function handleProblem(event) {
               scrollToSection(event, "problem");
             }}
@@ -90,7 +91,7 @@ function Navbar() {
           </a>
           <a
             href="#solution"
-            className="navbar-link"
+            className="site-navbar-link"
             onClick={function handleSolution(event) {
               scrollToSection(event, "solution");
             }}
@@ -99,7 +100,7 @@ function Navbar() {
           </a>
           <a
             href="#how-it-works"
-            className="navbar-link"
+            className="site-navbar-link"
             onClick={function handleHow(event) {
               scrollToSection(event, "how-it-works");
             }}
@@ -108,7 +109,7 @@ function Navbar() {
           </a>
           <a
             href="#portfolio"
-            className="navbar-link"
+            className="site-navbar-link"
             onClick={function handlePortfolio(event) {
               scrollToSection(event, "portfolio");
             }}
@@ -117,16 +118,19 @@ function Navbar() {
           </a>
           <a
             href="#contact"
-            className="navbar-link"
+            className="site-navbar-link"
             onClick={function handleContact(event) {
               scrollToSection(event, "contact");
             }}
           >
             Contact
           </a>
+          <Link to="/demo" className="site-navbar-demo-button">
+            View Live Demo
+          </Link>
           <a
             href={CAL_LINK}
-            className="navbar-cta-button"
+            className="site-navbar-cta-button"
             target="_blank"
             rel="noopener noreferrer"
           >

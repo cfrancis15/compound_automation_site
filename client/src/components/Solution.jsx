@@ -1,5 +1,6 @@
 // Solution - three product tiers in a shared bordered grid
 
+import { Link } from "react-router-dom";
 import ScrollReveal from "./ScrollReveal.jsx";
 
 function Solution() {
@@ -21,6 +22,9 @@ function Solution() {
               <p className="card-body">
               Automated deal scoring against auto-fetched comps. Green/yellow/red at a glance.
               </p>
+              <Link to="/demo" className="solution-demo-link">
+                View Live Demo →
+              </Link>
               <div className="solution-tier-price">
                 <p className="solution-tier-price-value price-mono">$2,000</p>
                 <p className="solution-tier-price-note">Delivered in 2 weeks</p>

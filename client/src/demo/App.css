@@ -1,0 +1,70 @@
+/* Demo-scoped dark theme — Bloomberg terminal meets modern SaaS */
+
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
+
+.demo-wrapper {
+  min-height: 100vh;
+  overflow-x: hidden;
+  max-width: 100%;
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, sans-serif;
+  background-color: #080c14;
+  color: #e2e8f0;
+  -webkit-font-smoothing: antialiased;
+}
+
+.demo-wrapper *,
+.demo-wrapper *::before,
+.demo-wrapper *::after {
+  box-sizing: border-box;
+}
+
+.demo-app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden;
+  max-width: 100%;
+}
+
+.demo-app__main {
+  flex: 1;
+  overflow-x: hidden;
+  max-width: 100%;
+  min-width: 0;
+}
+
+/* Scrollbar styling for data-heavy tables */
+.demo-wrapper ::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+.demo-wrapper ::-webkit-scrollbar-track {
+  background: #0d1117;
+}
+
+.demo-wrapper ::-webkit-scrollbar-thumb {
+  background: #334155;
+  border-radius: 4px;
+}
+
+.demo-wrapper ::-webkit-scrollbar-thumb:hover {
+  background: #475569;
+}
+
+/* Shared select/input reset for consistency */
+.demo-wrapper select,
+.demo-wrapper input,
+.demo-wrapper button {
+  font-family: inherit;
+}
+
+/* Contain wide tables without page-level horizontal scroll */
+.demo-wrapper .table-scroll-wrap {
+  background: #111827;
+  border: 1px solid #1e293b;
+  border-radius: 8px;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
