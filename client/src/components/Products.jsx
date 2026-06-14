@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { portfolioCardHover } from "../animations.js";
 import ScrollReveal from "./ScrollReveal.jsx";
+import WaitlistForm from "./WaitlistForm.jsx";
 
 function Products() {
   return (
@@ -30,9 +31,7 @@ function Products() {
                   every property in seconds. Built for real estate investors and
                   developers who screen volume.
                 </p>
-                <a href="#contact" className="solution-demo-link">
-                  Join the Waitlist
-                </a>
+                <WaitlistForm />
               </div>
             </motion.article>
           </ScrollReveal>
@@ -49,9 +48,7 @@ function Products() {
                   Built from real workflows, not assumptions. Join the list to get
                   early access when new tools launch.
                 </p>
-                <a href="#contact" className="solution-demo-link">
-                  Join the Waitlist
-                </a>
+              
               </div>
             </motion.article>
           </ScrollReveal>
