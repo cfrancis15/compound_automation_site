@@ -8,13 +8,13 @@ import ScrollReveal from "./ScrollReveal.jsx";
 
 function Portfolio() {
   return (
-    <section className="content-section portfolio-section section-primary" id="portfolio">
+    <section className="content-section portfolio-section section-primary" id="work">
       <div className="page-container">
         <ScrollReveal>
           <p className="section-label">EXAMPLES</p>
         </ScrollReveal>
         <ScrollReveal delayMs={120}>
-          <h2 className="section-heading">Built for CRE.</h2>
+          <h2 className="section-heading">Built for real workflows.</h2>
         </ScrollReveal>
 
         <div className="portfolio-cards">
@@ -33,7 +33,7 @@ function Portfolio() {
                 <p className="portfolio-subtitle">CRE Underwriting Tool</p>
                 <p className="card-body">
                   Drag-and-drop expense categorization and underwriting automation.
-                  Structures messy seller financials into clean, exportable models.
+                  Structures messy seller financials into clean exportable models.
                 </p>
               </div>
             </motion.article>

@@ -8,6 +8,7 @@ import Solution from "./components/Solution.jsx";
 import WhyUs from "./components/WhyUs.jsx";
 import HowItWorks from "./components/HowItWorks.jsx";
 import Portfolio from "./components/Portfolio.jsx";
+import Products from "./components/Products.jsx";
 import CallToAction from "./components/CallToAction.jsx";
 import Footer from "./components/Footer.jsx";
 import DemoLayout from "./demo/DemoLayout.jsx";
@@ -26,6 +27,7 @@ function HomePage() {
         <WhyUs />
         <HowItWorks />
         <Portfolio />
+        <Products />
         <CallToAction />
       </main>
       <Footer />

@@ -10,13 +10,11 @@ function Problem() {
           <p className="section-label">THE PROBLEM</p>
         </ScrollReveal>
         <ScrollReveal delayMs={120}>
-          <h2 className="section-heading">Same work. Every deal.</h2>
+          <h2 className="section-heading">Your team is doing the same work every day.</h2>
         </ScrollReveal>
         <ScrollReveal delayMs={240}>
           <p className="section-body">
-            Your analysts pull comps, populate models, and format deal memos by
-            hand. Every deal. Same manual process. It&apos;s slow, it&apos;s error-prone,
-            and the hours add up fast.
+          Every deal means another round of comp pulls, model updates, and formatted reports. Every property under management means another spreadsheet, another approval chain, another manual process. The work is predictable. It shouldn't require your best people to do it by hand.
           </p>
         </ScrollReveal>
       </div>

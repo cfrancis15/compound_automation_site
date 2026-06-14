@@ -61,11 +61,12 @@ function Hero() {
         <div className="hero-main">
           <div className="page-container hero-content">
             <ScrollReveal>
-              <h1 className="hero-headline">Stop underwriting deals by hand.</h1>
+              <h1 className="hero-headline">We build software for real estate businesses.</h1>
             </ScrollReveal>
             <ScrollReveal delayMs={120}>
               <p className="hero-subheading">
-              We build automation tools for CRE brokerages and buyside firms so your analysts can focus on deals instead of data entry.
+                Custom tools and automation for the workflows eating your team&apos;s
+                time. Built by someone who&apos;s worked the job.
               </p>
             </ScrollReveal>
             <ScrollReveal delayMs={240}>
@@ -87,14 +88,14 @@ function Hero() {
           <div className="page-container hero-metadata-inner">
             <div className="metadata-item">
               <p className="metadata-label">Focus</p>
-              <p className="metadata-value">Commercial Real Estate</p>
+              <p className="metadata-value">Real Estate</p>
             </div>
             <div className="metadata-item">
-              <p className="metadata-label">Based In</p>
+              <p className="metadata-label">Based in</p>
               <p className="metadata-value">Denver, CO</p>
             </div>
             <div className="metadata-item">
-              <p className="metadata-label">Engagements From</p>
+              <p className="metadata-label">Projects from</p>
               <p className="metadata-value price-mono">$2,000</p>
             </div>
           </div>

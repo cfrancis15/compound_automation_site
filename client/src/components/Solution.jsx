@@ -1,67 +1,40 @@
-// Solution - three product tiers in a shared bordered grid
+// Solution - custom software and products offerings
 
-import { Link } from "react-router-dom";
 import ScrollReveal from "./ScrollReveal.jsx";
 
 function Solution() {
   return (
-    <section className="content-section solution-section section-alt" id="solution">
+    <section className="content-section solution-section section-alt" id="services">
       <div className="page-container">
         <ScrollReveal>
           <p className="section-label">WHAT WE BUILD</p>
         </ScrollReveal>
         <ScrollReveal delayMs={120}>
-          <h2 className="section-heading">Three ways forward.</h2>
+          <h2 className="section-heading">Two ways we help.</h2>
         </ScrollReveal>
 
         <ScrollReveal delayMs={240}>
-          <div className="solution-phases">
-            <article className="solution-phase">
-              <p className="card-phase-label">ENTRY POINT</p>
-              <h3 className="card-heading">Deal Screener</h3>
-              <p className="card-body">
-              Automated deal scoring against auto-fetched comps. Green/yellow/red at a glance.
+          <div className="solution-columns">
+            <div className="solution-column">
+              <p className="section-label">CUSTOM SOFTWARE</p>
+              <p className="section-body">
+                We scope, build, and deploy tools built around your specific workflow.
+                Not a generic SaaS you have to adapt to, rather software that works the way
+                your team already works. One-time project or ongoing partnership.
               </p>
-              <Link to="/demo" className="solution-demo-link">
-                View Live Demo →
-              </Link>
-              <div className="solution-tier-price">
-                <p className="solution-tier-price-value price-mono">$2,000</p>
-                <p className="solution-tier-price-note">Delivered in 2 weeks</p>
-              </div>
-            </article>
+            </div>
 
-            <article className="solution-phase">
-              <p className="card-phase-label">CORE PACKAGE</p>
-              <h3 className="card-heading">Underwriting Automation</h3>
-              <p className="card-body">
-              The full pipeline. We structure your messy data inputs,
-                auto-populate your underwriting model, and generate branded deal
-                memos on the back end. Your analysts evaluate deals instead of
-                entering data.
+            <div className="solution-column">
+              <p className="section-label">PRODUCTS</p>
+              <p className="section-body">
+                Standalone tools built for common real estate workflows. No scoping
+                call, no implementation work. Plug in and go. New tools launching
+                throughout 2026.
               </p>
-              <div className="solution-tier-price">
-                <p className="solution-tier-price-value price-mono">$7,000+</p>
-                <p className="solution-tier-price-note">Scoped to your workflow</p>
-              </div>
-            </article>
-
-            <article className="solution-phase">
-              <p className="card-phase-label">CUSTOM BUILD</p>
-              <h3 className="card-heading">Workflow Engineering</h3>
-              <p className="card-body">
-                Bespoke automation for the rest of your operation. Pipeline
-                tracking, portfolio reporting, investor communications, deal
-                screening. Whatever is eating your team&apos;s hours, we scope it
-                and build it.
-              </p>
-              <div className="solution-tier-price">
-                <p className="solution-tier-price-value price-mono">
-                  Quoted per project
-                </p>
-                <p className="solution-tier-price-note">Free scoping call</p>
-              </div>
-            </article>
+              <a href="#products" className="solution-demo-link">
+                View Products
+              </a>
+            </div>
           </div>
         </ScrollReveal>
       </div>

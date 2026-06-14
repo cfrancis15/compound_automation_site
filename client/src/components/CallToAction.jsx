@@ -11,13 +11,13 @@ function CallToAction() {
       <div className="page-container contact-content">
         <ScrollReveal>
           <h2 className="section-heading contact-heading">
-            Ready to stop doing it the hard way?
+            Ready to cut the busywork?
           </h2>
         </ScrollReveal>
         <ScrollReveal delayMs={120}>
           <p className="section-body contact-subheading">
-            30 minutes. We walk through your workflow and tell you exactly what we
-            can build.
+            Tell us what your team does every day. We will tell you what we can
+            automate and what it costs. Thirty minutes, no commitment.
           </p>
         </ScrollReveal>
 

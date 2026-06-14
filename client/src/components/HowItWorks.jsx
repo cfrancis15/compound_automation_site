@@ -22,8 +22,8 @@ function HowItWorks() {
               <p className="step-number">01</p>
               <h3 className="step-heading">Discovery Call</h3>
               <p className="step-body">
-                Tell us what your team does on every deal. We will tell you what we
-                can automate and what it costs. No commitment.
+                You walk us through your workflow. We tell you exactly what we can
+                build and what it costs. No commitment.
               </p>
               <p className="step-price">Free</p>
               <p className="step-note">30 minutes, no commitment</p>
@@ -31,10 +31,10 @@ function HowItWorks() {
 
             <article className="process-step">
               <p className="step-number">02</p>
-              <h3 className="step-heading">Build &amp; Deploy</h3>
+              <h3 className="step-heading">Build and Deploy</h3>
               <p className="step-body">
-                We build your automation, plug it into your existing tools, and
-                train your team. You are up and running within weeks.
+                We build your tool, integrate it into your existing stack, and train
+                your team. You are up and running within weeks.
               </p>
               <p className="step-price">2-6 weeks</p>
               <p className="step-note">Depending on scope</p>
@@ -42,14 +42,16 @@ function HowItWorks() {
 
             <article className="process-step">
               <p className="step-number">03</p>
-              <h3 className="step-heading">Maintain &amp; Iterate</h3>
+              <h3 className="step-heading">Maintain and Iterate</h3>
               <p className="step-body">
-                Your automation stays running and keeps getting better. We handle
-                hosting, bug fixes, and data source updates. When you need new
-                features or workflows, we build those too.
+                Your tool stays running and keeps getting better. We handle hosting,
+                bug fixes, and data updates. New workflows get added when you need
+                them.
               </p>
               <p className="step-price price-mono">$300/month</p>
-              <p className="step-note">Retainer optional | Feature additions: $50/hr</p>
+              <p className="step-note">
+                Retainer optional. Feature additions billed separately.
+              </p>
             </article>
           </div>
         </ScrollReveal>

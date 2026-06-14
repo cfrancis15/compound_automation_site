@@ -1,7 +1,6 @@
 // Navbar - fixed top navigation with anchor links and mobile menu
 
 import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
 import { CAL_LINK } from "../config.js";
 
 function Navbar() {
@@ -81,40 +80,31 @@ function Navbar() {
 
         <nav className={navClassName}>
           <a
-            href="#problem"
+            href="#work"
             className="site-navbar-link"
-            onClick={function handleProblem(event) {
-              scrollToSection(event, "problem");
+            onClick={function handleWork(event) {
+              scrollToSection(event, "work");
             }}
           >
-            Problem
+            Work
           </a>
           <a
-            href="#solution"
+            href="#services"
             className="site-navbar-link"
-            onClick={function handleSolution(event) {
-              scrollToSection(event, "solution");
+            onClick={function handleServices(event) {
+              scrollToSection(event, "services");
             }}
           >
-            Solution
+            Services
           </a>
           <a
-            href="#how-it-works"
+            href="#products"
             className="site-navbar-link"
-            onClick={function handleHow(event) {
-              scrollToSection(event, "how-it-works");
+            onClick={function handleProducts(event) {
+              scrollToSection(event, "products");
             }}
           >
-            How It Works
-          </a>
-          <a
-            href="#portfolio"
-            className="site-navbar-link"
-            onClick={function handlePortfolio(event) {
-              scrollToSection(event, "portfolio");
-            }}
-          >
-            Portfolio
+            Products
           </a>
           <a
             href="#contact"
@@ -125,9 +115,6 @@ function Navbar() {
           >
             Contact
           </a>
-          <Link to="/demo" className="site-navbar-demo-button">
-            View Live Demo
-          </Link>
           <a
             href={CAL_LINK}
             className="site-navbar-cta-button"
