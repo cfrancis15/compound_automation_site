@@ -96,7 +96,7 @@ function Hero() {
             </div>
             <div className="metadata-item">
               <p className="metadata-label">Projects from</p>
-              <p className="metadata-value price-mono">$2,000</p>
+              <p className="metadata-value price-mono">$1,500</p>
             </div>
           </div>
         </ScrollReveal>
