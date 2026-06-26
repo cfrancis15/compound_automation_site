@@ -1,4 +1,4 @@
-CREATE TABLE demo_leads (
+CREATE TABLE IF NOT EXISTS demo_leads (
     id SERIAL PRIMARY KEY,
     name VARCHAR(200) NOT NULL,
     email VARCHAR(200) NOT NULL,
@@ -8,7 +8,15 @@ CREATE TABLE demo_leads (
 
 ALTER TABLE demo_leads ENABLE ROW LEVEL SECURITY;
 
+DROP POLICY IF EXISTS "Allow anonymous inserts" ON demo_leads;
 CREATE POLICY "Allow anonymous inserts"
 ON demo_leads
 FOR INSERT
 WITH CHECK (true);
+
+CREATE TABLE IF NOT EXISTS public.keepalive (
+    id BIGINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+    pinged_at TIMESTAMPTZ NOT NULL DEFAULT NOW()
+);
+
+ALTER TABLE public.keepalive ENABLE ROW LEVEL SECURITY;
