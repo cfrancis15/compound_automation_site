@@ -1,44 +1,25 @@
-// App.jsx - root layout assembling all marketing page sections
+// App.jsx - marketing pages plus existing demo routes
 
 import { Routes, Route } from "react-router-dom";
-import Navbar from "./components/Navbar.jsx";
-import Hero from "./components/Hero.jsx";
-import Problem from "./components/Problem.jsx";
-import Solution from "./components/Solution.jsx";
-import WhyUs from "./components/WhyUs.jsx";
-import HowItWorks from "./components/HowItWorks.jsx";
-import Portfolio from "./components/Portfolio.jsx";
-import Products from "./components/Products.jsx";
-import CallToAction from "./components/CallToAction.jsx";
-import Footer from "./components/Footer.jsx";
+import SiteLayout from "./components/SiteLayout.jsx";
+import HomePage from "./pages/HomePage.jsx";
+import BuildPage from "./pages/BuildPage.jsx";
+import GrowPage from "./pages/GrowPage.jsx";
+import ProductsPage from "./pages/ProductsPage.jsx";
 import DemoLayout from "./demo/DemoLayout.jsx";
 import Dashboard from "./demo/pages/Dashboard.jsx";
 import DealDetail from "./demo/pages/DealDetail.jsx";
 import Screens from "./demo/pages/Screens.jsx";
 
-function HomePage() {
-  return (
-    <>
-      <Navbar />
-      <main>
-        <Hero />
-        <Problem />
-        <Solution />
-        <WhyUs />
-        <HowItWorks />
-        <Portfolio />
-        <Products />
-        <CallToAction />
-      </main>
-      <Footer />
-    </>
-  );
-}
-
 function App() {
   return (
     <Routes>
-      <Route path="/" element={<HomePage />} />
+      <Route element={<SiteLayout />}>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/build" element={<BuildPage />} />
+        <Route path="/grow" element={<GrowPage />} />
+        <Route path="/products" element={<ProductsPage />} />
+      </Route>
       <Route path="/demo" element={<DemoLayout />}>
         <Route index element={<Dashboard />} />
         <Route path="deals/:id" element={<DealDetail />} />

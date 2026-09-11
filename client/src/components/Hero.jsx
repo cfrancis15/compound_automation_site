@@ -1,4 +1,4 @@
-// Hero - full-viewport intro with metadata bar and cursor glow
+// Hero - full-viewport intro with cursor glow and primary actions
 
 import { useState, useEffect, useRef } from "react";
 import { motion } from "framer-motion";
@@ -19,29 +19,32 @@ function Hero() {
     }
   }, []);
 
-  useEffect(function trackMouse() {
-    if (!cursorGlowEnabled) {
-      return undefined;
-    }
-
-    function handleMouseMove(event) {
-      const heroElement = heroRef.current;
-      if (!heroElement) {
-        return;
+  useEffect(
+    function trackMouse() {
+      if (!cursorGlowEnabled) {
+        return undefined;
       }
 
-      const bounds = heroElement.getBoundingClientRect();
-      const offsetX = event.clientX - bounds.left;
-      const offsetY = event.clientY - bounds.top;
-      setGlowPosition({ x: offsetX, y: offsetY });
-    }
+      function handleMouseMove(event) {
+        const heroElement = heroRef.current;
+        if (!heroElement) {
+          return;
+        }
 
-    window.addEventListener("mousemove", handleMouseMove);
+        const bounds = heroElement.getBoundingClientRect();
+        const offsetX = event.clientX - bounds.left;
+        const offsetY = event.clientY - bounds.top;
+        setGlowPosition({ x: offsetX, y: offsetY });
+      }
 
-    return function cleanup() {
-      window.removeEventListener("mousemove", handleMouseMove);
-    };
-  }, [cursorGlowEnabled]);
+      window.addEventListener("mousemove", handleMouseMove);
+
+      return function cleanup() {
+        window.removeEventListener("mousemove", handleMouseMove);
+      };
+    },
+    [cursorGlowEnabled]
+  );
 
   let glowStyle = {};
   if (cursorGlowEnabled) {
@@ -61,45 +64,42 @@ function Hero() {
         <div className="hero-main">
           <div className="page-container hero-content">
             <ScrollReveal>
-              <h1 className="hero-headline">We build software for real estate businesses.</h1>
+              <p className="section-label">Compound Automation</p>
             </ScrollReveal>
-            <ScrollReveal delayMs={120}>
+            <ScrollReveal delayMs={80}>
+              <h1 className="hero-headline">
+                Build a better digital foundation.
+                <br />
+                Grow what comes next.
+              </h1>
+            </ScrollReveal>
+            <ScrollReveal delayMs={160}>
               <p className="hero-subheading">
-                Custom tools and automation for the workflows eating your team&apos;s
-                time. Built by someone who&apos;s worked the job.
+                Compound builds websites, software, and digital marketing systems
+                for businesses that want to look better, reach more customers,
+                and grow.
               </p>
             </ScrollReveal>
             <ScrollReveal delayMs={240}>
-              <motion.a
-                href={CAL_LINK}
-                className="cta-button hero-cta-button"
-                target="_blank"
-                rel="noopener noreferrer"
-                whileHover={ctaButtonHover}
-                whileTap={ctaButtonTap}
-              >
-                Book a Discovery Call
-              </motion.a>
+              <div className="hero-actions">
+                <motion.a
+                  href={CAL_LINK}
+                  className="cta-button"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Book a call with Connor"
+                  whileHover={ctaButtonHover}
+                  whileTap={ctaButtonTap}
+                >
+                  Book a Call
+                </motion.a>
+                <a href="#services" className="cta-button-secondary">
+                  Explore Services
+                </a>
+              </div>
             </ScrollReveal>
           </div>
         </div>
-
-        <ScrollReveal className="hero-metadata-bar" delayMs={150}>
-          <div className="page-container hero-metadata-inner">
-            <div className="metadata-item">
-              <p className="metadata-label">Focus</p>
-              <p className="metadata-value">Real Estate</p>
-            </div>
-            <div className="metadata-item">
-              <p className="metadata-label">Based in</p>
-              <p className="metadata-value">Denver, CO</p>
-            </div>
-            <div className="metadata-item">
-              <p className="metadata-label">Projects from</p>
-              <p className="metadata-value price-mono">$1,500</p>
-            </div>
-          </div>
-        </ScrollReveal>
       </div>
     </section>
   );

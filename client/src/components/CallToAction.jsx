@@ -1,46 +1,36 @@
-// CallToAction - final contact section with Cal.com and email
+// CallToAction - closing section with Cal.com booking link
 
 import { motion } from "framer-motion";
 import { CAL_LINK } from "../config.js";
 import { ctaButtonHover, ctaButtonTap } from "../animations.js";
 import ScrollReveal from "./ScrollReveal.jsx";
 
-function CallToAction() {
+function CallToAction(props) {
+  const heading = props.heading;
+  const text = props.text;
+  const sectionClass = props.sectionClass || "section-primary";
+
   return (
-    <section className="content-section contact-section section-primary" id="contact">
+    <section className={"content-section contact-section " + sectionClass}>
       <div className="page-container contact-content">
         <ScrollReveal>
-          <h2 className="section-heading contact-heading">
-            Ready to cut the busywork?
-          </h2>
+          <h2 className="section-heading contact-heading">{heading}</h2>
         </ScrollReveal>
-        <ScrollReveal delayMs={120}>
-          <p className="section-body contact-subheading">
-            Tell us what your team does every day. We will tell you what we can
-            automate and what it costs. Thirty minutes, no commitment.
-          </p>
+        <ScrollReveal delayMs={80}>
+          <p className="section-body contact-subheading">{text}</p>
         </ScrollReveal>
-
-        <ScrollReveal delayMs={240}>
+        <ScrollReveal delayMs={160}>
           <motion.a
             href={CAL_LINK}
             className="cta-button contact-cta-button"
             target="_blank"
             rel="noopener noreferrer"
+            aria-label="Book a call with Connor"
             whileHover={ctaButtonHover}
             whileTap={ctaButtonTap}
           >
-            Book a Discovery Call
+            Book a Call
           </motion.a>
-        </ScrollReveal>
-
-        <ScrollReveal delayMs={360}>
-          <p className="contact-email-line">
-            Or email me directly:{" "}
-            <a className="contact-email-link" href="mailto:connor@compoundautomation.dev">
-              connor@compoundautomation.dev
-            </a>
-          </p>
         </ScrollReveal>
       </div>
     </section>

@@ -1,11 +1,20 @@
-// Navbar - fixed top navigation with anchor links and mobile menu
+// Navbar - fixed top navigation with route links and mobile menu
 
 import { useState, useEffect } from "react";
+import { Link, NavLink, useLocation } from "react-router-dom";
 import { CAL_LINK } from "../config.js";
 
 function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const location = useLocation();
+
+  useEffect(
+    function closeOnRouteChange() {
+      setMenuOpen(false);
+    },
+    [location.pathname]
+  );
 
   useEffect(function handleScroll() {
     function onScroll() {
@@ -24,12 +33,7 @@ function Navbar() {
     };
   }, []);
 
-  function scrollToSection(event, sectionId) {
-    event.preventDefault();
-    const target = document.getElementById(sectionId);
-    if (target) {
-      target.scrollIntoView({ behavior: "smooth" });
-    }
+  function closeMenu() {
     setMenuOpen(false);
   }
 
@@ -46,23 +50,21 @@ function Navbar() {
   return (
     <header className={navbarClassName}>
       <div className="site-navbar-inner page-container">
-        <a
-          href="#"
+        <Link
+          to="/"
           className="site-navbar-logo"
-          onClick={function goTop(event) {
-            event.preventDefault();
-            window.scrollTo({ top: 0, behavior: "smooth" });
-          }}
+          aria-label="Compound Automation home"
+          onClick={closeMenu}
         >
           <img
             className="site-navbar-logo-mark"
             src="/logo.png"
-            alt="Compound Automation"
+            alt=""
             width="32"
             height="32"
           />
           <span className="site-navbar-logo-text">Compound Automation</span>
-        </a>
+        </Link>
 
         <button
           type="button"
@@ -78,48 +80,27 @@ function Navbar() {
           <span className="site-navbar-toggle-bar" />
         </button>
 
-        <nav className={navClassName}>
-          <a
-            href="#work"
+        <nav className={navClassName} aria-label="Primary">
+          <NavLink to="/build" className="site-navbar-link" onClick={closeMenu}>
+            Build
+          </NavLink>
+          <NavLink to="/grow" className="site-navbar-link" onClick={closeMenu}>
+            Grow
+          </NavLink>
+          <NavLink
+            to="/products"
             className="site-navbar-link"
-            onClick={function handleWork(event) {
-              scrollToSection(event, "work");
-            }}
-          >
-            Work
-          </a>
-          <a
-            href="#services"
-            className="site-navbar-link"
-            onClick={function handleServices(event) {
-              scrollToSection(event, "services");
-            }}
-          >
-            Services
-          </a>
-          <a
-            href="#products"
-            className="site-navbar-link"
-            onClick={function handleProducts(event) {
-              scrollToSection(event, "products");
-            }}
+            onClick={closeMenu}
           >
             Products
-          </a>
-          <a
-            href="#contact"
-            className="site-navbar-link"
-            onClick={function handleContact(event) {
-              scrollToSection(event, "contact");
-            }}
-          >
-            Contact
-          </a>
+          </NavLink>
           <a
             href={CAL_LINK}
             className="site-navbar-cta-button"
             target="_blank"
             rel="noopener noreferrer"
+            aria-label="Book a call with Connor"
+            onClick={closeMenu}
           >
             Book a Call
           </a>

@@ -1,6 +1,6 @@
 # Compound Automation Website
 
-Marketing site for [compoundautomation.dev](https://compoundautomation.dev) — CRE automation for brokerages.
+Marketing site for [compoundautomation.dev](https://compoundautomation.dev) — websites, software, and digital marketing systems for growing businesses.
 
 ## Stack
 
@@ -67,7 +67,7 @@ Express serves the built app from `client/build` on port **3001** (or `PORT`).
 ```
 client/
   index.html     Vite entry (dev + build)
-  src/           React components and assets
+  src/           React pages, components, and assets
 server/          Express production server
 package.json     Root scripts (dev, build, start)
 ```
