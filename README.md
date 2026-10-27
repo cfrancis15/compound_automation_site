@@ -1,6 +1,6 @@
 # Compound Automation Website
 
-Marketing site for [compoundautomation.dev](https://compoundautomation.dev) — websites, software, and digital marketing systems for growing businesses.
+Marketing site for [compoundautomation.dev](https://compoundautomation.dev). Compound helps local service businesses get more customers.
 
 ## Stack
 
@@ -24,7 +24,8 @@ cp .env.example client/.env
 
 | Variable | Description |
 |----------|-------------|
-| `VITE_CAL_LINK` | Cal.com booking URL |
+| `VITE_CAL_LINK` | Cal.com booking URL. Defaults to the 15-minute meeting link. |
+| `VITE_WEB3FORMS_ACCESS_KEY` | Web3Forms access key. Or paste it into `WEB3FORMS_ACCESS_KEY` in `client/src/config.js`. |
 | `VITE_LINKEDIN_URL` | LinkedIn profile URL |
 
 ## Development

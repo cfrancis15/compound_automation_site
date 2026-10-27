@@ -1,4 +1,4 @@
-// SiteLayout - shared marketing header, footer, and scroll reset
+// SiteLayout - marketing header, footer, and scroll reset
 
 import { useEffect } from "react";
 import { Outlet, useLocation } from "react-router-dom";
@@ -7,6 +7,7 @@ import Footer from "./Footer.jsx";
 
 function SiteLayout() {
   const location = useLocation();
+  const isLandscaping = location.pathname === "/landscaping";
 
   useEffect(
     function resetScroll() {
@@ -23,14 +24,22 @@ function SiteLayout() {
     [location.pathname, location.hash]
   );
 
+  let shellClassName = "site-shell";
+  if (isLandscaping) {
+    shellClassName = shellClassName + " theme-landscaping";
+  }
+
   return (
-    <>
-      <Navbar />
-      <main>
+    <div className={shellClassName}>
+      <a className="skip-link" href="#main">
+        Skip to content
+      </a>
+      <Navbar minimal={isLandscaping} />
+      <main id="main">
         <Outlet />
       </main>
       <Footer />
-    </>
+    </div>
   );
 }
 

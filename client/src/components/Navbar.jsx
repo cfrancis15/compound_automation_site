@@ -1,20 +1,12 @@
-// Navbar - fixed top navigation with route links and mobile menu
+// Navbar - logo, landscaping link, and booking button. Landscaping page hides the middle link.
 
-import { useState, useEffect } from "react";
-import { Link, NavLink, useLocation } from "react-router-dom";
-import { CAL_LINK } from "../config.js";
+import { useEffect, useState } from "react";
+import { Link, NavLink } from "react-router-dom";
+import BookCallLink from "./BookCallLink.jsx";
 
-function Navbar() {
-  const [menuOpen, setMenuOpen] = useState(false);
+function Navbar(props) {
+  const minimal = props.minimal;
   const [scrolled, setScrolled] = useState(false);
-  const location = useLocation();
-
-  useEffect(
-    function closeOnRouteChange() {
-      setMenuOpen(false);
-    },
-    [location.pathname]
-  );
 
   useEffect(function handleScroll() {
     function onScroll() {
@@ -25,7 +17,7 @@ function Navbar() {
       }
     }
 
-    window.addEventListener("scroll", onScroll);
+    window.addEventListener("scroll", onScroll, { passive: true });
     onScroll();
 
     return function cleanup() {
@@ -33,29 +25,18 @@ function Navbar() {
     };
   }, []);
 
-  function closeMenu() {
-    setMenuOpen(false);
-  }
-
   let navbarClassName = "site-navbar";
   if (scrolled) {
     navbarClassName = navbarClassName + " site-navbar-scrolled";
   }
-
-  let navClassName = "site-navbar-nav";
-  if (menuOpen) {
-    navClassName = navClassName + " site-navbar-nav-open";
+  if (minimal) {
+    navbarClassName = navbarClassName + " site-navbar-minimal";
   }
 
   return (
     <header className={navbarClassName}>
       <div className="site-navbar-inner page-container">
-        <Link
-          to="/"
-          className="site-navbar-logo"
-          aria-label="Compound Automation home"
-          onClick={closeMenu}
-        >
+        <Link to="/" className="site-navbar-logo" aria-label="Compound Automation home">
           <img
             className="site-navbar-logo-mark"
             src="/logo.png"
@@ -63,47 +44,19 @@ function Navbar() {
             width="32"
             height="32"
           />
-          <span className="site-navbar-logo-text">Compound Automation</span>
+          <span className="site-navbar-logo-text">
+            <span>Compound</span>
+            <span>Automation</span>
+          </span>
         </Link>
 
-        <button
-          type="button"
-          className="site-navbar-toggle"
-          aria-label="Toggle navigation menu"
-          aria-expanded={menuOpen}
-          onClick={function toggleMenu() {
-            setMenuOpen(!menuOpen);
-          }}
-        >
-          <span className="site-navbar-toggle-bar" />
-          <span className="site-navbar-toggle-bar" />
-          <span className="site-navbar-toggle-bar" />
-        </button>
-
-        <nav className={navClassName} aria-label="Primary">
-          <NavLink to="/build" className="site-navbar-link" onClick={closeMenu}>
-            Build
-          </NavLink>
-          <NavLink to="/grow" className="site-navbar-link" onClick={closeMenu}>
-            Grow
-          </NavLink>
-          <NavLink
-            to="/products"
-            className="site-navbar-link"
-            onClick={closeMenu}
-          >
-            Products
-          </NavLink>
-          <a
-            href={CAL_LINK}
-            className="site-navbar-cta-button"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="Book a call with Connor"
-            onClick={closeMenu}
-          >
-            Book a Call
-          </a>
+        <nav className="site-navbar-nav" aria-label="Primary">
+          {minimal ? null : (
+            <NavLink to="/landscaping" className="site-navbar-link">
+              Landscaping
+            </NavLink>
+          )}
+          <BookCallLink className="site-navbar-cta-button">Book a Call</BookCallLink>
         </nav>
       </div>
     </header>
