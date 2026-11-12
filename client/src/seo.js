@@ -1,6 +1,6 @@
 // seo.js - titles, descriptions, Open Graph, and JSON-LD shared by pages and the build
 
-import { landscapingFaqs } from "./data/landscaping.js";
+import { industryFaqs } from "./data/industryShared.js";
 
 export const SITE_URL = "https://compoundautomation.dev";
 export const SITE_NAME = "Compound Automation";
@@ -21,15 +21,11 @@ export const homeSeo = {
   },
 };
 
-export const landscapingSeo = {
-  title: "Marketing for Landscaping Companies in Colorado | Compound Automation",
-  description:
-    "Get a free growth plan for your landscaping company. See how to get Google and AI to recommend you first, then decide if you want us to run it.",
-  path: "/landscaping",
-  jsonLd: {
+function faqPageJsonLd() {
+  return {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    mainEntity: landscapingFaqs.map(function mapFaq(item) {
+    mainEntity: industryFaqs.map(function mapFaq(item) {
       return {
         "@type": "Question",
         name: item.question,
@@ -39,8 +35,34 @@ export const landscapingSeo = {
         },
       };
     }),
-  },
+  };
+}
+
+export const landscapingSeo = {
+  title: "Marketing for Landscaping Companies in Colorado | Compound Automation",
+  description:
+    "Get a free growth plan for your landscaping company. See how to get Google and AI to recommend you first, then decide if you want us to run it.",
+  path: "/landscaping",
+  jsonLd: faqPageJsonLd(),
 };
+
+export const roofingSeo = {
+  title: "Marketing for Roofing Companies in Colorado | Compound Automation",
+  description:
+    "Get a free growth plan for your roofing company. See how to get Google and AI to recommend you first, then decide if you want us to run it.",
+  path: "/roofing",
+  jsonLd: faqPageJsonLd(),
+};
+
+export const paintingSeo = {
+  title: "Marketing for Painting Companies in Colorado | Compound Automation",
+  description:
+    "Get a free growth plan for your painting company. See how to get Google and AI to recommend you first, then decide if you want us to run it.",
+  path: "/painting",
+  jsonLd: faqPageJsonLd(),
+};
+
+export const funnelPages = [landscapingSeo, roofingSeo, paintingSeo];
 
 export function pageUrl(path) {
   if (path === "/") {

@@ -1,7 +1,8 @@
-// Navbar - logo, landscaping link, and booking button. Landscaping page hides the middle link.
+// Navbar - logo, industry links, and booking button. Funnel pages hide the industry links.
 
 import { useEffect, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
+import { industries } from "../data/industries.js";
 import BookCallLink from "./BookCallLink.jsx";
 
 function Navbar(props) {
@@ -52,9 +53,19 @@ function Navbar(props) {
 
         <nav className="site-navbar-nav" aria-label="Primary">
           {minimal ? null : (
-            <NavLink to="/landscaping" className="site-navbar-link">
-              Landscaping
-            </NavLink>
+            <div className="site-navbar-links">
+              {industries.map(function renderLink(industry) {
+                return (
+                  <NavLink
+                    key={industry.href}
+                    to={industry.href}
+                    className="site-navbar-link"
+                  >
+                    {industry.name}
+                  </NavLink>
+                );
+              })}
+            </div>
           )}
           <BookCallLink className="site-navbar-cta-button">Book a Call</BookCallLink>
         </nav>

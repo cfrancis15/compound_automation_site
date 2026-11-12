@@ -1,4 +1,4 @@
-// HomePage - local service businesses, with industry pages added from the list below
+// HomePage - local service businesses. Industry cards come from data/industries.js.
 
 import { useEffect, useRef, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
@@ -8,6 +8,7 @@ import BookCallLink from "../components/BookCallLink.jsx";
 import LeadForm from "../components/LeadForm.jsx";
 import ProcessList from "../components/ProcessList.jsx";
 import ScrollReveal from "../components/ScrollReveal.jsx";
+import { industries } from "../data/industries.js";
 
 const services = [
   {
@@ -21,16 +22,6 @@ const services = [
   {
     title: "Win the job",
     body: "A fast, credible website that makes customers pick you over the next guy.",
-  },
-];
-
-// Add an object here to feature another industry on the homepage.
-const industries = [
-  {
-    name: "Landscaping",
-    summary: "More booked jobs for landscaping and lawn care companies.",
-    href: "/landscaping",
-    linkText: "See how it works",
   },
 ];
 

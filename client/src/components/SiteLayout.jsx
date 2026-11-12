@@ -4,10 +4,11 @@ import { useEffect } from "react";
 import { Outlet, useLocation } from "react-router-dom";
 import Navbar from "./Navbar.jsx";
 import Footer from "./Footer.jsx";
+import { funnelThemes } from "../data/industries.js";
 
 function SiteLayout() {
   const location = useLocation();
-  const isLandscaping = location.pathname === "/landscaping";
+  const funnelTheme = funnelThemes[location.pathname] || "";
 
   useEffect(
     function resetScroll() {
@@ -25,8 +26,8 @@ function SiteLayout() {
   );
 
   let shellClassName = "site-shell";
-  if (isLandscaping) {
-    shellClassName = shellClassName + " theme-landscaping";
+  if (funnelTheme) {
+    shellClassName = shellClassName + " " + funnelTheme;
   }
 
   return (
@@ -34,7 +35,7 @@ function SiteLayout() {
       <a className="skip-link" href="#main">
         Skip to content
       </a>
-      <Navbar minimal={isLandscaping} />
+      <Navbar minimal={Boolean(funnelTheme)} />
       <main id="main">
         <Outlet />
       </main>

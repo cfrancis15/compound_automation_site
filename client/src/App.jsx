@@ -5,6 +5,8 @@ import { Navigate, Route, Routes } from "react-router-dom";
 import SiteLayout from "./components/SiteLayout.jsx";
 import HomePage from "./pages/HomePage.jsx";
 import LandscapingPage from "./pages/LandscapingPage.jsx";
+import PaintingPage from "./pages/PaintingPage.jsx";
+import RoofingPage from "./pages/RoofingPage.jsx";
 
 const DemoLayout = lazy(() => import("./demo/DemoLayout.jsx"));
 const Dashboard = lazy(() => import("./demo/pages/Dashboard.jsx"));
@@ -17,6 +19,8 @@ function App() {
       <Route element={<SiteLayout />}>
         <Route path="/" element={<HomePage />} />
         <Route path="/landscaping" element={<LandscapingPage />} />
+        <Route path="/roofing" element={<RoofingPage />} />
+        <Route path="/painting" element={<PaintingPage />} />
         <Route path="/build" element={<Navigate to="/" replace />} />
         <Route path="/grow" element={<Navigate to="/" replace />} />
         <Route path="/products" element={<Navigate to="/" replace />} />

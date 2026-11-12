@@ -3,7 +3,7 @@ import react from "@vitejs/plugin-react";
 import fs from "fs";
 import path from "path";
 import { fileURLToPath } from "url";
-import { landscapingSeo, pageUrl } from "./src/seo.js";
+import { funnelPages, pageUrl } from "./src/seo.js";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
@@ -52,23 +52,26 @@ function applySeo(html, seo) {
   return next;
 }
 
-function landscapingHtmlPlugin() {
+function funnelHtmlPlugin() {
   return {
-    name: "landscaping-html",
+    name: "funnel-html",
     apply: "build",
     closeBundle() {
       const indexPath = path.resolve(__dirname, "build", "index.html");
       const html = fs.readFileSync(indexPath, "utf8");
-      const next = applySeo(html, landscapingSeo);
-      const outDir = path.resolve(__dirname, "build", "landscaping");
-      fs.mkdirSync(outDir, { recursive: true });
-      fs.writeFileSync(path.join(outDir, "index.html"), next);
+      funnelPages.forEach(function writePage(seo) {
+        const next = applySeo(html, seo);
+        const folder = seo.path.replace(/^\//, "");
+        const outDir = path.resolve(__dirname, "build", folder);
+        fs.mkdirSync(outDir, { recursive: true });
+        fs.writeFileSync(path.join(outDir, "index.html"), next);
+      });
     },
   };
 }
 
 export default defineConfig({
-  plugins: [react(), landscapingHtmlPlugin()],
+  plugins: [react(), funnelHtmlPlugin()],
   esbuild: {
     loader: "jsx",
     include: /src\/.*\.jsx?$/,

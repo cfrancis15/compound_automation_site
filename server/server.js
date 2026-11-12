@@ -12,8 +12,11 @@ if (process.env.NODE_ENV === "production") {
 
   app.use(express.static(clientBuildPath));
 
-  app.get("/landscaping", function sendLandscaping(request, response) {
-    response.sendFile(path.join(clientBuildPath, "landscaping", "index.html"));
+  ["/landscaping", "/roofing", "/painting"].forEach(function addFunnelRoute(routePath) {
+    app.get(routePath, function sendFunnelPage(request, response) {
+      const folder = routePath.replace(/^\//, "");
+      response.sendFile(path.join(clientBuildPath, folder, "index.html"));
+    });
   });
 
   app.get("*", function handleSpaRequest(request, response) {
