@@ -60,6 +60,8 @@ function LeadForm(props) {
   const labelledBy = props.labelledBy;
   const submitted = props.submitted;
   const onSuccess = props.onSuccess;
+  const subject = props.subject || FORM_SUBJECT;
+  const submitLabel = props.submitLabel || "Get my free growth plan";
   const location = useLocation();
   const formRef = useRef(null);
   const successRef = useRef(null);
@@ -230,7 +232,7 @@ function LeadForm(props) {
         onSubmit={handleSubmit}
       >
         <input type="hidden" name="access_key" value={WEB3FORMS_ACCESS_KEY} />
-        <input type="hidden" name="subject" value={FORM_SUBJECT} />
+        <input type="hidden" name="subject" value={subject} />
         <input type="hidden" name="page" value={location.pathname} />
         <input type="hidden" name="utm_source" value={utm.utm_source} />
         <input type="hidden" name="utm_medium" value={utm.utm_medium} />
@@ -368,7 +370,7 @@ function LeadForm(props) {
           className="cta-button lead-form-submit"
           disabled={isSubmitting}
         >
-          {isSubmitting ? "Sending..." : "Get my free growth plan"}
+          {isSubmitting ? "Sending..." : submitLabel}
         </button>
       </form>
     </div>

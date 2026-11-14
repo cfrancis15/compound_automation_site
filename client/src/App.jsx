@@ -5,6 +5,7 @@ import { Navigate, Route, Routes } from "react-router-dom";
 import SiteLayout from "./components/SiteLayout.jsx";
 import HomePage from "./pages/HomePage.jsx";
 import LandscapingPage from "./pages/LandscapingPage.jsx";
+import OutboundPage from "./pages/OutboundPage.jsx";
 import PaintingPage from "./pages/PaintingPage.jsx";
 import RoofingPage from "./pages/RoofingPage.jsx";
 
@@ -21,6 +22,7 @@ function App() {
         <Route path="/landscaping" element={<LandscapingPage />} />
         <Route path="/roofing" element={<RoofingPage />} />
         <Route path="/painting" element={<PaintingPage />} />
+        <Route path="/outbound" element={<OutboundPage />} />
         <Route path="/build" element={<Navigate to="/" replace />} />
         <Route path="/grow" element={<Navigate to="/" replace />} />
         <Route path="/products" element={<Navigate to="/" replace />} />

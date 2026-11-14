@@ -181,6 +181,52 @@ function HomePage() {
         </div>
       </section>
 
+      <section className="content-section section-alt" aria-labelledby="outbound-home-heading">
+        <div className="page-container">
+          <ScrollReveal>
+            <h2 className="section-heading" id="outbound-home-heading">
+              Outbound business development
+            </h2>
+          </ScrollReveal>
+          <ScrollReveal delayMs={80}>
+            <p className="section-body">
+              Marketing waits for customers to look for you. Outbound does the
+              opposite. We find the companies you want, start the conversation,
+              qualify who is a fit, and book the meeting.
+            </p>
+          </ScrollReveal>
+          <div className="stage-grid">
+            <article className="surface-card offer-card">
+              <h3 className="offer-title">Prospecting</h3>
+              <p className="card-body">
+                Build the list of companies that match who you sell to.
+              </p>
+            </article>
+            <article className="surface-card offer-card">
+              <h3 className="offer-title">Outreach</h3>
+              <p className="card-body">Contact them and follow up.</p>
+            </article>
+            <article className="surface-card offer-card">
+              <h3 className="offer-title">Qualification</h3>
+              <p className="card-body">
+                Keep the conversation to people who are actually a fit.
+              </p>
+            </article>
+            <article className="surface-card offer-card">
+              <h3 className="offer-title">Booking</h3>
+              <p className="card-body">
+                Put qualified meetings on your calendar.
+              </p>
+            </article>
+          </div>
+          <div className="section-action">
+            <Link to={"/outbound" + location.search} className="cta-button">
+              See how outbound works
+            </Link>
+          </div>
+        </div>
+      </section>
+
       <ProcessList
         heading="How it works"
         headingId="home-process-heading"

@@ -1,6 +1,7 @@
 // seo.js - titles, descriptions, Open Graph, and JSON-LD shared by pages and the build
 
 import { industryFaqs } from "./data/industryShared.js";
+import { outboundFaqs } from "./data/outbound.js";
 
 export const SITE_URL = "https://compoundautomation.dev";
 export const SITE_NAME = "Compound Automation";
@@ -62,7 +63,28 @@ export const paintingSeo = {
   jsonLd: faqPageJsonLd(),
 };
 
-export const funnelPages = [landscapingSeo, roofingSeo, paintingSeo];
+export const outboundSeo = {
+  title: "Outbound Business Development | Compound Automation",
+  description:
+    "We run outbound for you, from prospecting and outreach through qualification and a booked meeting. Request an outbound plan, then decide if you want us to run it.",
+  path: "/outbound",
+  jsonLd: {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: outboundFaqs.map(function mapFaq(item) {
+      return {
+        "@type": "Question",
+        name: item.question,
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: item.answer,
+        },
+      };
+    }),
+  },
+};
+
+export const funnelPages = [landscapingSeo, roofingSeo, paintingSeo, outboundSeo];
 
 export function pageUrl(path) {
   if (path === "/") {

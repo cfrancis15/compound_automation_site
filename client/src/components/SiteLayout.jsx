@@ -9,6 +9,8 @@ import { funnelThemes } from "../data/industries.js";
 function SiteLayout() {
   const location = useLocation();
   const funnelTheme = funnelThemes[location.pathname] || "";
+  const isMinimal =
+    Boolean(funnelTheme) || location.pathname === "/outbound";
 
   useEffect(
     function resetScroll() {
@@ -26,6 +28,9 @@ function SiteLayout() {
   );
 
   let shellClassName = "site-shell";
+  if (isMinimal) {
+    shellClassName = shellClassName + " funnel-page";
+  }
   if (funnelTheme) {
     shellClassName = shellClassName + " " + funnelTheme;
   }
@@ -35,7 +40,7 @@ function SiteLayout() {
       <a className="skip-link" href="#main">
         Skip to content
       </a>
-      <Navbar minimal={Boolean(funnelTheme)} />
+      <Navbar minimal={isMinimal} />
       <main id="main">
         <Outlet />
       </main>

@@ -388,7 +388,8 @@ img {
 
 .service-grid,
 .industry-grid,
-.offer-grid {
+.offer-grid,
+.stage-grid {
   display: grid;
   gap: 16px;
   margin-top: 28px;
@@ -869,6 +870,11 @@ img {
     grid-template-columns: repeat(2, 1fr);
     gap: 18px;
   }
+
+  .stage-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+  }
 }
 
 @media (min-width: 900px) {
@@ -947,6 +953,10 @@ img {
   .offer-grid {
     grid-template-columns: repeat(3, 1fr);
   }
+
+  .stage-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
 }
 
 @media (max-width: 767px) {
@@ -972,9 +982,7 @@ img {
     margin-left: auto;
   }
 
-  .theme-landscaping .site-footer,
-  .theme-roofing .site-footer,
-  .theme-painting .site-footer {
+  .funnel-page .site-footer {
     padding-bottom: calc(96px + env(safe-area-inset-bottom));
   }
 

@@ -65,6 +65,9 @@ function Navbar(props) {
                   </NavLink>
                 );
               })}
+              <NavLink to="/outbound" className="site-navbar-link">
+                Outbound
+              </NavLink>
             </div>
           )}
           <BookCallLink className="site-navbar-cta-button">Book a Call</BookCallLink>
